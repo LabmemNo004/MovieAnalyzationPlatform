@@ -1,0 +1,2 @@
+# MovieAnalyzationPlatform
+一个基于亚马逊历年电影数据的数据分析平台
