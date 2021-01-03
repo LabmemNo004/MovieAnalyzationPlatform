@@ -2,14 +2,38 @@ package com.example.demo.JSON;
 
 public class JsonResult<T> {
     private T data;
-    private String code;
+    private long code;
     private String msg;
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
+    }
+
+    public long getCode() {
+        return code;
+    }
+
+    public void setCode(long code) {
+        this.code = code;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
     /**
      * 若没有数据返回，默认状态码为 0，提示信息为“操作成功！”
      */
     public JsonResult() {
-        this.code = "0";
+        this.code = 0;
         this.msg = "操作成功！";
     }
 
@@ -18,7 +42,7 @@ public class JsonResult<T> {
      * @param code
      * @param msg
      */
-    public JsonResult(String code, String msg) {
+    public JsonResult(long code, String msg) {
         this.code = code;
         this.msg = msg;
     }
@@ -29,7 +53,7 @@ public class JsonResult<T> {
      */
     public JsonResult(T data) {
         this.data = data;
-        this.code = "0";
+        this.code = 0;
         this.msg = "操作成功！";
     }
 
@@ -40,8 +64,27 @@ public class JsonResult<T> {
      */
     public JsonResult(T data, String msg) {
         this.data = data;
-        this.code = "0";
+        this.code = 0;
         this.msg = msg;
     }
     // 省略 get 和 set 方法
+
+    /**
+     * 有数据返回，code记录查询时间，必填
+     */
+    public JsonResult(T data,String msg,long code){
+        this.data = data;
+        this.code = code;
+        this.msg = msg;
+    }
+
+    /**
+     * 只返回提示信息
+     * @param msg
+     * @param code
+     */
+    public JsonResult(String msg,long code){
+        this.code = code;
+        this.msg = msg;
+    }
 }

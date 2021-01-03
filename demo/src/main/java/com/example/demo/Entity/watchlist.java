@@ -1,16 +1,16 @@
 package com.example.demo.Entity;
 
 import lombok.Data;
+import org.hibernate.annotations.Proxy;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 @Data
 @Table(name = "watchlist")
+@IdClass(watchlistPK.class)
+@Proxy(lazy = false)
 public class watchlist implements Serializable {
     @Id
     @Column(name = "userID")
