@@ -13,14 +13,6 @@ public interface numberRepository extends JpaRepository<numbers, Integer> {
     numbers getSimpleNumbers();
 
 
-//    @Modifying
-//    @Transactional
-//    @Query("update numbers as c set c.userNumadd=?1," +
-//            "c.artistNumadd=?2,c.movieNumadd=?3" +
-//            "where c.N=1")
-//    int updateNumberById(Integer userID, Integer ArtistID,Integer MovieID);
-
-
     @Modifying
     @Transactional
     @Query("update numbers as c set c.userNumadd=?1 " +

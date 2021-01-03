@@ -1,15 +1,16 @@
 package com.example.demo.Entity;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
 
 @Entity
 @Data
 @Table(name = "user")
-public class user {
+public class users {
     @Id
 //    @GeneratedValue(strategy= GenerationType.IDENTITY) //配置主键的生成策略
     @Column(name="userID") //指定和表中cust_id字段的映射关系
@@ -30,6 +31,7 @@ public class user {
     @Column(name="sex")
     private Integer sex;
 
+    @JsonFormat(pattern="yyyy-MM-dd",timezone = "GMT+8")
     @Column(name="birthday")
     private Date birthday;
 
@@ -42,17 +44,28 @@ public class user {
     @Column(name="signature")
     private String signature;
 
+    @Column(name="movieCollectNum")
+    private Integer movieCollectNum;
+
+    @Column(name="peopleCollectNum")
+    private Integer peopleCollectNum;
+
+    @Column(name="commentNum")
+    private Integer commentNum;
 
 
-    public user() {
+
+    public users() {
     }
 
 
-
-    public user(int userID, String profileName,
-                String password, String photo,
-                Integer role, Integer sex, Date birthday,
-                String phone, String email, String signature) {
+    public users(int userID, String profileName,
+                 String password, String photo,
+                 Integer role, Integer sex,
+                 Date birthday, String phone,
+                 String email, String signature,
+                 Integer movieCollectNum,
+                 Integer peopleCollectNum, Integer commentNum) {
         this.userID = userID;
         this.profileName = profileName;
         this.password = password;
@@ -63,6 +76,33 @@ public class user {
         this.phone = phone;
         this.email = email;
         this.signature = signature;
+        this.movieCollectNum = movieCollectNum;
+        this.peopleCollectNum = peopleCollectNum;
+        this.commentNum = commentNum;
+    }
+
+    public Integer getMovieCollectNum() {
+        return movieCollectNum;
+    }
+
+    public void setMovieCollectNum(Integer movieCollectNum) {
+        this.movieCollectNum = movieCollectNum;
+    }
+
+    public Integer getPeopleCollectNum() {
+        return peopleCollectNum;
+    }
+
+    public void setPeopleCollectNum(Integer peopleCollectNum) {
+        this.peopleCollectNum = peopleCollectNum;
+    }
+
+    public Integer getCommentNum() {
+        return commentNum;
+    }
+
+    public void setCommentNum(Integer commentNum) {
+        this.commentNum = commentNum;
     }
 
     public Integer getRole() {

@@ -1,10 +1,11 @@
 package com.example.demo.Entity;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
 
 @Entity
 @Data
@@ -21,6 +22,7 @@ public class artist {
     @Column(name="PersonName")
     private String PersonName;
 
+    @JsonFormat(pattern="yyyy-MM-dd",timezone = "GMT+8")
     @Column(name="birthday")
     private Date birthday;
 
@@ -38,15 +40,6 @@ public class artist {
 
     @Column(name="picture")
     private String picture;
-
-    @Column(name="movieCollectNum")
-    private Integer movieCollectNum;
-
-    @Column(name="peopleCollectNum")
-    private Integer peopleCollectNum;
-
-    @Column(name="commentNum")
-    private Integer commentNum;
 
 
 
@@ -122,27 +115,4 @@ public class artist {
         this.picture = picture;
     }
 
-    public Integer getMovieCollectNum() {
-        return movieCollectNum;
-    }
-
-    public void setMovieCollectNum(Integer movieCollectNum) {
-        this.movieCollectNum = movieCollectNum;
-    }
-
-    public Integer getPeopleCollectNum() {
-        return peopleCollectNum;
-    }
-
-    public void setPeopleCollectNum(Integer peopleCollectNum) {
-        this.peopleCollectNum = peopleCollectNum;
-    }
-
-    public Integer getCommentNum() {
-        return commentNum;
-    }
-
-    public void setCommentNum(Integer commentNum) {
-        this.commentNum = commentNum;
-    }
 }

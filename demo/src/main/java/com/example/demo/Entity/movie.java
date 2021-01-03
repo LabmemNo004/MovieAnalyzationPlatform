@@ -1,9 +1,10 @@
 package com.example.demo.Entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
 
 @Entity
 @Data
@@ -29,8 +30,6 @@ public class movie {
     @Column(name="score")
     private Float score;
 
-    @Column(name="comment")
-    private String comment;
 
     @Column(name="type")
     private String type;
@@ -38,6 +37,7 @@ public class movie {
     @Column(name="price")
     private Float price;
 
+    @JsonFormat(pattern="yyyy-MM-dd",timezone = "GMT+8")
     @Column(name="publishTime")
     private Date publishTime;
 
@@ -76,9 +76,6 @@ public class movie {
         return productNum;
     }
 
-    public String getComment() {
-        return comment;
-    }
 
     public Date getPublishTime() {
         return publishTime;
@@ -94,10 +91,6 @@ public class movie {
 
     public void setActorNum(Integer actorNum) {
         this.actorNum = actorNum;
-    }
-
-    public void setComment(String comment) {
-        this.comment = comment;
     }
 
     public void setDirectorNum(Integer directorNum) {

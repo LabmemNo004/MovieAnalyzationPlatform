@@ -1,6 +1,5 @@
 package com.example.demo.controller;
 
-import com.example.demo.Entity.user;
 import com.example.demo.JSON.JsonResult;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.util.StopWatch;
