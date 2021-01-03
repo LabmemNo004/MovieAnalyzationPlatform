@@ -3,30 +3,31 @@ package com.example.demo.Entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Data
 @Table(name = "movie")
 public class movie {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY) //配置主键的生成策略
+//    @GeneratedValue(strategy= GenerationType.IDENTITY) //配置主键的生成策略
     @Column(name="movieID") //指定和表中cust_id字段的映射关系
-    private int movieID;
+    private Integer movieID;
 
     @Column(name="title")
     private String title;
 
     @Column(name="productNum")
-    private int productNum;
+    private Integer productNum;
 
     @Column(name="directorNum")
-    private int directorNum;
+    private Integer directorNum;
 
     @Column(name="actorNum")
-    private int actorNum;
+    private Integer actorNum;
 
     @Column(name="score")
-    private float score;
+    private Float score;
 
     @Column(name="comment")
     private String comment;
@@ -35,10 +36,10 @@ public class movie {
     private String type;
 
     @Column(name="price")
-    private float price;
+    private Float price;
 
     @Column(name="publishTime")
-    private String publishTime;
+    private Date publishTime;
 
     @Column(name="photo")
     private String photo;
@@ -51,27 +52,27 @@ public class movie {
         this.photo = photo;
     }
 
-    public float getPrice() {
+    public Float getPrice() {
         return price;
     }
 
-    public float getScore() {
+    public Float getScore() {
         return score;
     }
 
-    public int getActorNum() {
+    public Integer getActorNum() {
         return actorNum;
     }
 
-    public int getDirectorNum() {
+    public Integer getDirectorNum() {
         return directorNum;
     }
 
-    public int getMovieID() {
+    public Integer getMovieID() {
         return movieID;
     }
 
-    public int getProductNum() {
+    public Integer getProductNum() {
         return productNum;
     }
 
@@ -79,7 +80,7 @@ public class movie {
         return comment;
     }
 
-    public String getPublishTime() {
+    public Date getPublishTime() {
         return publishTime;
     }
 
@@ -91,7 +92,7 @@ public class movie {
         return type;
     }
 
-    public void setActorNum(int actorNum) {
+    public void setActorNum(Integer actorNum) {
         this.actorNum = actorNum;
     }
 
@@ -99,27 +100,27 @@ public class movie {
         this.comment = comment;
     }
 
-    public void setDirectorNum(int directorNum) {
+    public void setDirectorNum(Integer directorNum) {
         this.directorNum = directorNum;
     }
 
-    public void setMovieID(int movieID) {
+    public void setMovieID(Integer movieID) {
         this.movieID = movieID;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(Float price) {
         this.price = price;
     }
 
-    public void setProductNum(int productNum) {
+    public void setProductNum(Integer productNum) {
         this.productNum = productNum;
     }
 
-    public void setPublishTime(String publishTime) {
+    public void setPublishTime(Date publishTime) {
         this.publishTime = publishTime;
     }
 
-    public void setScore(float score) {
+    public void setScore(Float score) {
         this.score = score;
     }
 

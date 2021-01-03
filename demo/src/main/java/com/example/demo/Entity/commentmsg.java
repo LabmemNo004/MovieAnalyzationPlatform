@@ -3,27 +3,28 @@ package com.example.demo.Entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Data
 @Table(name = "commentmsg")
 public class commentmsg {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY) //配置主键的生成策略
+    //@GeneratedValue(strategy= GenerationType.IDENTITY) //配置主键的生成策略
     @Column(name="msgID") //指定和表中cust_id字段的映射关系
-    private int msgID;
+    private Integer msgID;
 
     @Column(name="movieID")
-    private String movieID;
+    private Integer movieID;
 
     @Column(name="userID")
-    private String userID;
+    private Integer userID;
 
-    @Column(name="helpfulness")
-    private String helpfulness;
+    @Column(name= "rate")
+    private Float helpfulness;
 
     @Column(name="time")
-    private String time;
+    private Date time;
 
     @Column(name="summary")
     private String summary;
@@ -31,43 +32,43 @@ public class commentmsg {
     @Column(name="text")
     private String text;
 
-    public int getMsgID() {
+    public Integer getMsgID() {
         return msgID;
     }
 
-    public void setMsgID(int msgID) {
+    public void setMsgID(Integer msgID) {
         this.msgID = msgID;
     }
 
-    public String getMovieID() {
+    public Integer getMovieID() {
         return movieID;
     }
 
-    public void setMovieID(String movieID) {
+    public void setMovieID(Integer movieID) {
         this.movieID = movieID;
     }
 
-    public String getUserID() {
+    public Integer getUserID() {
         return userID;
     }
 
-    public void setUserID(String userID) {
+    public void setUserID(Integer userID) {
         this.userID = userID;
     }
 
-    public String getHelpfulness() {
+    public Float getHelpfulness() {
         return helpfulness;
     }
 
-    public void setHelpfulness(String helpfulness) {
+    public void setHelpfulness(Float helpfulness) {
         this.helpfulness = helpfulness;
     }
 
-    public String getTime() {
+    public Date getTime() {
         return time;
     }
 
-    public void setTime(String time) {
+    public void setTime(Date time) {
         this.time = time;
     }
 
